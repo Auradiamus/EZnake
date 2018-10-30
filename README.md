@@ -1,0 +1,2 @@
+# EZnake
+Simple Snake game
