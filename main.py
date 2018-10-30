@@ -12,11 +12,13 @@ import random
 ##Resolution##
 #Canvas#
 res = (800,600) #Resolution of the window
-##Colours##
+##Colours & images##
 RGBWhite = (255,255,255) #RGB code for white
 RGBBlack = (0,0,0) #RGB code for black
 RGBSnakeGreen = (12,185,0) #RGB code for darker green
 RGBAppleRed = (228,3,3) #RGB code for slighty darker red
+imgSnakeHead = pygame.image.load('resources/snakeHead.png')
+imgAppleRed = pygame.image.load('resources/appleRed.png')
 ##Speeds##
 minSpeed = 10 #Minimum speed / starting speed of the snake
 maxSpeed = 40 #Maximum speed of the snake
@@ -94,7 +96,6 @@ def _gameLoop(): #Game loop
                     if event.key == pygame.K_x: #If key is x
                         gameExit = True
                         gameOver = False
-                        break
 
         for event in pygame.event.get(): #Calls eventHandler
             if event.type == pygame.QUIT:
@@ -166,7 +167,7 @@ def _checkPos(head_x, head_y):
             randRedAppleY = random.randrange(10, res[1]-blockSize, blockSize) #new Y for new red apple
 
 ###main###
-_init('Snakegame')
+_init('EZnake v')
 _gameLoop()
 pygame.quit()
 quit()
